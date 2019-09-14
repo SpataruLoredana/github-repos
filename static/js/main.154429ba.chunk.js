@@ -1,0 +1,2 @@
+(window["webpackJsonpgithub-repos"]=window["webpackJsonpgithub-repos"]||[]).push([[0],{20:function(e,t,n){e.exports=n(30)},30:function(e,t,n){"use strict";n.r(t);var a=n(1),r=n.n(a),o=n(15),l=n.n(o),u=n(42),c=n(39),i=n(40);var m=function(){return r.a.createElement("div",null,r.a.createElement(u.a,null),r.a.createElement(c.a,{maxWidth:"md"},r.a.createElement(i.a,{variant:"h1",style:{textAlign:"center"},gutterBottom:!0},"GitHub Repos")))};l.a.render(r.a.createElement(m,null),document.getElementById("root"))}},[[20,1,2]]]);
+//# sourceMappingURL=main.154429ba.chunk.js.map
