@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {
   Box,
   Button,
@@ -43,5 +45,13 @@ const RepoCard = ({
     </Card>
   );
 }
+
+RepoCard.propTypes = {
+  name: PropTypes.string,
+  description: PropTypes.string,
+  link: PropTypes.string,
+  stars: PropTypes.number,
+  isOwner: PropTypes.bool
+};
 
 export default RepoCard;

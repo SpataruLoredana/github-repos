@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { Link } from 'react-router-dom';
 import { useStyles } from './styles';
+import { COLOR_THEME } from './../../constants';
 import {
   AppBar,
   Toolbar,
@@ -17,7 +20,7 @@ const NavBar = ({ colorTheme, changeColorTheme }) => {
   });
 
   const handleToogleChange = event => {
-    const colorTheme = event.target.checked ? 'dark' : 'light';
+    const colorTheme = event.target.checked ? COLOR_THEME.DARK : COLOR_THEME.LIGHT;
     setState({ ...state, darkTheme: event.target.checked });
     changeColorTheme(colorTheme);
   };
@@ -63,5 +66,10 @@ const NavBar = ({ colorTheme, changeColorTheme }) => {
     </div>
   );
 }
+
+NavBar.propTypes = {
+  colorTheme: PropTypes.oneOf([COLOR_THEME.DARK, COLOR_THEME.LIGHT]),
+  changeColorTheme: PropTypes.func
+};
 
 export default NavBar;
