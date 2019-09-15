@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useStyles } from './styles';
 import {
   AppBar,
   Toolbar,
   IconButton,
-  Typography,
   FormControlLabel,
   Switch,
-  Divider
+  Divider,
 } from '@material-ui/core';
 
-const NavBar = ({ colorTheme, changeColorTheme}) => {
+const NavBar = ({ colorTheme, changeColorTheme }) => {
   const classes = useStyles({ colorTheme });
   const [state, setState] = useState({
     darkTheme: false
@@ -24,38 +24,38 @@ const NavBar = ({ colorTheme, changeColorTheme}) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
+      <AppBar position='static' className={classes.appBar}>
         <Toolbar>
           <IconButton
-            edge="start"
+            edge='start'
             className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
+            color='inherit'
+            aria-label='open drawer'
           >
             <i className='material-icons'>menu</i>
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Link to='/' className={classes.link}>
             GitHub Repos
-          </Typography>
+          </Link>
           <FormControlLabel
             control={
               <Switch
                 checked={state.darkTheme}
                 onChange={handleToogleChange}
-                value="darkTheme"
-                color="default"
+                value='darkTheme'
+                color='default'
               />
             }
-            label="Toggle Theme"
+            label='Toggle Theme'
           />
-          <Divider className={classes.divider} orientation="vertical" />
-          <IconButton edge="start" color="inherit" aria-label="menu" mx={2}>
+          <Divider className={classes.divider} orientation='vertical' />
+          <IconButton edge='start' color='inherit' aria-label='menu' mx={2}>
             <i className='material-icons'>notifications</i>
           </IconButton>
-          <IconButton edge="start" color="inherit" aria-label="menu" mx={2}>
+          <IconButton edge='start' color='inherit' aria-label='menu' mx={2}>
             <i className='material-icons'>account_circle</i>
           </IconButton>
-          <IconButton edge="start" color="inherit" aria-label="menu" mx={2}>
+          <IconButton edge='start' color='inherit' aria-label='menu' mx={2}>
             <i className='material-icons'>help</i>
           </IconButton>
         </Toolbar>

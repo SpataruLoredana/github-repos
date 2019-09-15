@@ -3,7 +3,7 @@ import { teal, grey } from '@material-ui/core/colors';
 
 export const useStyles = makeStyles(theme => ({
   appBar: props => ({
-    background: props.colorTheme === 'dark' ? grey[900] : teal[700]
+    background: props.colorTheme === 'dark' ? grey[900] : teal[400]
   }),
   root: {
     flexGrow: 1
@@ -11,12 +11,11 @@ export const useStyles = makeStyles(theme => ({
   menuButton: {
     marginRight: theme.spacing(2)
   },
-  title: {
-    flexGrow: 1,
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    }
+  link: {
+    fontSize: '1.1rem',
+    color: theme.palette.background.paper,
+    textDecoration: 'none',
+    flexGrow: 1
   },
   divider: {
     height: 28,
