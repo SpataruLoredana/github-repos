@@ -1,9 +1,10 @@
 import { REPO_ACTIONS, CHANGE_COLOR_THEME } from './../actions/types';
+import { COLOR_THEME } from './../constants';
 
 const uiState = {
   isFetching: false,
   errorMessage: '',
-  colorTheme: 'light'
+  colorTheme: COLOR_THEME.LIGHT
 };
 
 const uiReducer = (ui = uiState, action) => {
@@ -11,12 +12,14 @@ const uiReducer = (ui = uiState, action) => {
     case REPO_ACTIONS.FETCH_USER_REPOSITORIES:
       return {
         ...ui,
+        errorMessage: '',
         isFetching: true
       };
 
     case REPO_ACTIONS.FETCH_USER_REPOSITORIES_SUCCESS:
       return {
         ...ui,
+        errorMessage: '',
         isFetching: false
       };
 
