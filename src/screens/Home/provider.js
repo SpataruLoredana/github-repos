@@ -6,11 +6,6 @@ import Home from './Home';
 
 const state2Props = (state) => {
   return {
-    username: state.data.username,
-    avatarUrl: state.data.userAvatar,
-    repositories: state.data.repositories,
-    isFetching: state.ui.isFetching,
-    errorMessage: state.ui.errorMessage,
     colorTheme: state.ui.colorTheme
   };
 };

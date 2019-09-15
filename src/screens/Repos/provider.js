@@ -1,9 +1,7 @@
 import { connect } from 'react-redux';
-
-import Repos from './Repos';
-import { getUserRepositories } from '../../actions/repo-actions';
 import { changeColorTheme } from '../../actions/types';
 
+import Repos from './Repos';
 
 const state2Props = (state) => {
   return {
@@ -18,9 +16,6 @@ const state2Props = (state) => {
 
 const dispatch2Props = (dispatch) => {
   return {
-    getUserRepositories: (username) => {
-      dispatch(getUserRepositories(username));
-    },
     changeColorTheme: (colorTheme) => {
       dispatch(changeColorTheme(colorTheme));
     }
