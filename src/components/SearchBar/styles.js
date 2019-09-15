@@ -28,7 +28,7 @@ export const useStyles = makeStyles(theme => ({
     background: props.colorTheme === COLOR_THEME.DARK ? pink[500] : teal[500],
     color: theme.palette.primary.contrastText,
     '&:hover': {
-      background: props.colorTheme === COLOR_THEME ? pink[700] : teal[700]
+      background: props.colorTheme === COLOR_THEME.DARK ? pink[700] : teal[700]
     }
   })
 }));
