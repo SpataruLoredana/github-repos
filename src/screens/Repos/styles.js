@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { teal, pink, red } from '@material-ui/core/colors';
+import { COLOR_THEME } from './../../constants';
 
 const darkGradient = 'linear-gradient(to right, #000000, #434343)';
 const lightGradient = 'linear-gradient(to top, #ada996, #f2f2f2, #dbdbdb, #eaeaea)';
@@ -23,12 +24,12 @@ export const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(1)
   },
   grid: props => ({
-    background: props.colorTheme === 'dark' ? darkGradient : lightGradient,
+    background: props.colorTheme === COLOR_THEME.DARK ? darkGradient : lightGradient,
     minHeight: '100vh'
   }),
   text: props => ({
     textAlign: 'center',
-    color: props.colorTheme === 'dark' ? theme.palette.background.paper : theme.palette.text.primary
+    color: props.colorTheme === COLOR_THEME.DARK ? theme.palette.background.paper : theme.palette.text.primary
   }),
   progressContainer: {
     position: 'absolute',
@@ -38,15 +39,15 @@ export const useStyles = makeStyles(theme => ({
     zIndex: 20,
   },
   progress: props => ({
-    color:  props.colorTheme === 'dark' ? pink[700] : teal[700]
+    color:  props.colorTheme === COLOR_THEME.DARK ? pink[700] : teal[700]
   }),
   button: props => ({
     margin: '2rem auto',
     padding: theme.spacing(1, 3),
-    background: props.colorTheme === 'dark' ? pink[500] : teal[400],
+    background: props.colorTheme === COLOR_THEME.DARK ? pink[500] : teal[400],
     color: theme.palette.primary.contrastText,
     '&:hover': {
-      background: props.colorTheme === 'dark' ? pink[700] : teal[600]
+      background: props.colorTheme === COLOR_THEME.DARK ? pink[700] : teal[600]
     }
   }),
   error: {

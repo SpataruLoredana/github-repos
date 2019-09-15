@@ -4,7 +4,7 @@ import { yellow } from '@material-ui/core/colors';
 export const useStyles = makeStyles(theme => ({
   repoCard: {
     width: 350,
-    margin: theme.spacing(1, 0),
+    margin: theme.spacing(2, 0),
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between'

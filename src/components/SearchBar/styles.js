@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { teal, pink, red } from '@material-ui/core/colors';
+import { teal, pink } from '@material-ui/core/colors';
+import { COLOR_THEME } from './../../constants';
 
 export const useStyles = makeStyles(theme => ({
   searchBar: {
@@ -24,14 +25,10 @@ export const useStyles = makeStyles(theme => ({
   },
   button: props => ({
     padding: theme.spacing(1.5, 5),
-    background: props.colorTheme === 'dark' ? pink[500] : teal[500],
+    background: props.colorTheme === COLOR_THEME.DARK ? pink[500] : teal[500],
     color: theme.palette.primary.contrastText,
     '&:hover': {
-      background: props.colorTheme === 'dark' ? pink[700] : teal[700]
+      background: props.colorTheme === COLOR_THEME ? pink[700] : teal[700]
     }
-  }),
-  error: {
-    color: red[500],
-    textAlign: 'center'
-  }
+  })
 }));

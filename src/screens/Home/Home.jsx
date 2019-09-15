@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { useStyles } from './styles';
+import { COLOR_THEME } from './../../constants';
 import {
   Box,
   Container,
@@ -18,6 +21,18 @@ const Home = ({
   history
 }) => {
   const classes = useStyles({ colorTheme });
+  const [inputError, setinputError] = useState('');
+
+  const handleSearchRepos = (e, username) => {
+    e.preventDefault();
+    if (!username) {
+      setinputError('Please type a username and then hit search');
+      return;
+    }
+    getUserRepositories(username);
+    history.push(`/repos/${username}`);
+  }
+
   return (
     <Grid className={classes.grid}>
       <NavBar changeColorTheme={changeColorTheme} colorTheme={colorTheme} />
@@ -33,13 +48,25 @@ const Home = ({
           list of repositories this user owns or contribute to with the most stars.
         </Typography>
         <SearchBar
-          handleReposSearch={getUserRepositories}
-          history={history}
+          handleReposSearch={handleSearchRepos}
           colorTheme={colorTheme}
         />
+        {
+          inputError &&
+          <Typography variant='subtitle2' className={classes.error}>
+            {inputError}
+          </Typography>
+        }
       </Container>
     </Grid>
   );
 }
+
+Home.propTypes = {
+  getUserRepositories: PropTypes.func,
+  changeColorTheme: PropTypes.func,
+  colorTheme: PropTypes.oneOf([COLOR_THEME.DARK, COLOR_THEME.LIGHT]),
+  history: PropTypes.shape()
+};
 
 export default Home;
