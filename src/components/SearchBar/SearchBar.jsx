@@ -24,7 +24,12 @@ const SearchBar = ({ handleReposSearch, colorTheme }) => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <Button type='submit' variant='contained' className={classes.button} >
+        <Button
+          type='submit'
+          variant='contained'
+          className={classes.searchButton}
+          color={colorTheme === COLOR_THEME.DARK ? 'secondary' : 'primary'}
+        >
           Search
       </Button>
       </form>

@@ -15,19 +15,17 @@ import {
 
 const NavBar = ({ colorTheme, changeColorTheme }) => {
   const classes = useStyles({ colorTheme });
-  const [state, setState] = useState({
-    darkTheme: false
-  });
+  const [isDarkTheme, setDarkTheme] = useState(false);
 
   const handleToogleChange = event => {
     const colorTheme = event.target.checked ? COLOR_THEME.DARK : COLOR_THEME.LIGHT;
-    setState({ ...state, darkTheme: event.target.checked });
+    setDarkTheme(event.target.checked);
     changeColorTheme(colorTheme);
   };
 
   return (
     <div className={classes.root}>
-      <AppBar position='static' className={classes.appBar}>
+      <AppBar position='static' className={classes.appBar} color={isDarkTheme ? 'secondary' : 'primary'}>
         <Toolbar>
           <IconButton
             edge='start'
@@ -43,7 +41,7 @@ const NavBar = ({ colorTheme, changeColorTheme }) => {
           <FormControlLabel
             control={
               <Switch
-                checked={state.darkTheme}
+                checked={isDarkTheme}
                 onChange={handleToogleChange}
                 value='darkTheme'
                 color='default'
