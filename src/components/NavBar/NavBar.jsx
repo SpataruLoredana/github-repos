@@ -25,7 +25,11 @@ const NavBar = ({ colorTheme, changeColorTheme }) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position='static' className={classes.appBar} color={isDarkTheme ? 'secondary' : 'primary'}>
+      <AppBar
+        position='static'
+        className={classes.appBar}
+        color={colorTheme === COLOR_THEME.DARK ? 'secondary' : 'primary'}
+      >
         <Toolbar>
           <IconButton
             edge='start'
