@@ -10,8 +10,9 @@ const dataReducer = (data = appData, action) => {
   switch (action.type) {
     case REPO_ACTIONS.FETCH_USER_REPOSITORIES:
       return {
-        ...data,
-        username: action.username.toLowerCase()
+        username: action.username.toLowerCase(),
+        userAvatar: '',
+        repositories: []
       };
 
     case REPO_ACTIONS.FETCH_USER_REPOSITORIES_SUCCESS:
